@@ -18,7 +18,10 @@ def main():
             index = right + 1
             break
         if soil_in_rover[mid] == required_soil:
-            index = mid
+            for i in range(mid + 1):
+                if soil_in_rover[i] == required_soil:
+                    index = i
+                    break
             break
         if soil_in_rover[mid] < required_soil:
             left = mid + 1
